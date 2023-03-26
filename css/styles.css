@@ -62,13 +62,28 @@ img {
   padding: 0;
 }
 .container {
-  width: 1158px;
-  /* outline: 2px solid red;
-  outline-offset: -2px; */
+  min-width: 320px;
+  max-width: 428px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  /* outline: 2px solid red;
+  outline-offset: -2px; */
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 /* ---------------- header styles--------------- */
 .header-container {
@@ -334,12 +349,30 @@ img {
 
 /* ---------main page philosophy section styles------------------ */
 .philosophy {
-  padding: var(--main-padding);
+  padding: 96px 0;
 }
+@media screen and (min-width: 1200px) {
+  .philosophy {
+    padding: var(--main-padding);
+  }
+}
+
 .philosophy-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px 24px;
 }
+@media screen and (min-width: 1200px) {
+  .philosophy-list {
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  .philosophy-list {
+    flex-wrap: nowrap;
+  }
+}
+
 .icon {
   transition: fill var(--transition);
 }
@@ -356,23 +389,81 @@ img {
   justify-content: center;
   align-items: center;
   margin-bottom: 8px;
+  display: none;
 }
+@media screen and (min-width: 1200px) {
+  .philosophy-list-rect {
+    display: flex;
+  }
+}
+.philosophy-list-item {
+}
+
 .philosophy-item-title {
-  font-weight: 500;
+  /* font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--main-title-color);
+  margin-bottom: 8px; */
+  font-family: "Roboto", sans-serif;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+
+  color: #2e2f42;
   margin-bottom: 8px;
 }
+
+@media screen and (min-width: 768px) {
+  .philosophy-item-title {
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .philosophy-item-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: var(--main-title-color);
+    margin-bottom: 8px;
+  }
+}
+
 .philosophy-item-desc {
   color: var(--secondary-title-color);
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  .philosophy-item-desc {
+    width: 356px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .philosophy-item-desc {
+    font-weight: 400;
+  }
 }
 /* ------------main page what section styles--------------------------- */
 .what {
   padding-bottom: 120px;
   text-align: center;
+  display: none;
 }
+@media screen and (min-width: 1200px) {
+  .what {
+    display: block;
+  }
+}
+
 .what-title {
   font-weight: 700;
   font-size: 36px;
